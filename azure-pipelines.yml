@@ -22,8 +22,11 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   inputs:
-    Contents: '**/.war'
+    #SourceFolder: '$(agent.builddirectory)'
+    Contents: '**\.war'
     TargetFolder: '$(build.artifactstagingdirectory)'
+    #CleanTargetFolder: true
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
