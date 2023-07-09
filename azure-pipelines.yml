@@ -22,10 +22,10 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   inputs:
-    #SourceFolder: '$(agent.builddirectory)'
+    SourceFolder: '$(agent.builddirectory)'
     Contents: '**\.war'
     TargetFolder: '$(build.artifactstagingdirectory)'
-    #CleanTargetFolder: true
+    CleanTargetFolder: true
     
 - task: PublishBuildArtifacts@1
   inputs:
